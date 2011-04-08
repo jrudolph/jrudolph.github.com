@@ -1,0 +1,554 @@
+/* Reset */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code, pre,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: none; }
+
+a img { border: none; }
+
+input { border-width: 0px; }
+
+/* Page */
+
+body {
+  font-family: sans-serif;
+  font-size: 10pt;
+}
+
+a[href] {
+  text-decoration: underline;
+  color: #315479;
+}
+
+a[href]:hover {
+  text-decoration: none;
+}
+
+#owner {
+  padding: 2px 10px 5px;
+  font-size: 12pt;
+  display: block;
+}
+
+#owner a {
+  color: black;
+}
+
+.value #owner {
+  background-color: #7996AC; /* light steel gray */
+}
+
+.type #owner {
+  background-color: #699D84; /* lighter green */
+}
+
+#types ol li > p {
+  margin-top: 5px;
+}
+
+#definition {
+  display: block;
+  padding: 5px 6px;
+}
+
+#definition > img {
+  float: left;
+}
+
+#definition > h1 {
+  padding: 12px 0 12px 6px;
+  color: white;
+  font-size: 24pt;
+  display: inline-block;
+}
+
+#definition h1 > a {
+  color: white;
+  font-size: 24pt;
+}
+
+#signature {
+  background-color: #EBEBEB;
+  font-size: 11.5pt;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+#signature > span.kind {
+  display: inline;
+  float: left;
+  text-align: left;
+  width: auto;
+  position: static;
+}
+
+#signature > span.symbol {
+  text-align: left;
+  display: inline;
+  padding-left: 0.7em;
+}
+
+/* Linear super types and known subclasses */
+.hideElement,
+.hiddenContent {
+  display: none;
+}
+
+div.superTypes > h1 {
+  font-style: italic;
+  padding-top: 0.5em;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #315479;
+  font-size: 11pt;
+}
+
+
+.value #definition {
+  background-color: #2C475C; /* blue */
+}
+
+.type #definition {
+  background-color: #316555; /* green */
+}
+
+#template {
+  margin-bottom: 50px;
+}
+
+h3 {
+  color: white;
+  padding: 5px 10px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+dl.attributes > dt {
+  display: block;
+  float: left;
+  font-style: italic;
+}
+
+dl.attributes > dd {
+  display: block;
+  padding-left: 10em;
+  margin-bottom: 5px;
+}
+
+#template .values > h3 {
+  background-color: #315479; /* grayish blue */
+}
+
+#template .types > h3 {
+  background-color: #316555; /* green */
+}
+
+#constructors > h3 {
+  background-color: #333;
+}
+
+#template > div.parent > h3 {
+  background-color: #3B3B3B; 
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 12pt;
+}
+
+#template > div.parent > h3 * {
+  color: white;
+}
+
+/* Member cells */
+
+div.members > ol {
+  background-color: white;
+  list-style: none
+}
+
+div.members > ol > li {
+  display: block;
+  border-bottom: 1px solid gray;
+  padding: 5px 0 6px;
+  margin: 0 10px;
+  position: relative;
+}
+
+div.members > ol > li:last-child {
+  border: 0;
+  padding: 5px 0 5px;
+}
+
+/* Member signatures */
+
+#tooltip {
+  background: #EFD5B5;
+  border: 1px solid gray;
+  color: black;
+  display: none;
+  padding: 5px;
+  position: absolute;
+}
+
+.signature {
+  font-family: monospace;
+  font-size: 10pt;
+  line-height: 18px;
+  clear: both;
+  display: block;
+}
+
+.signature .kind {
+  position: absolute;
+  text-align: right;
+  width: 8em;
+}
+
+.signature > a > .symbol > .name {
+  text-decoration: underline;
+}
+
+.signature > a:hover > .symbol > .name {
+  text-decoration: none;
+}
+
+.signature > a {
+  text-decoration: none;
+}
+
+.signature .symbol {
+  display: block;
+  padding-left: 8.7em;
+}
+
+.signature .name {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.signature .symbol .params .implicit {
+  font-style: italic;
+}
+
+.signature .symbol .name.deprecated {
+  text-decoration: line-through;
+}
+
+.signature .symbol .params .default {
+  font-style: italic;
+}
+
+#template .signature.closed {
+  background: url("arrow-right.png") no-repeat 0 5px transparent;
+  cursor: pointer;
+}
+
+#template .signature.opened {
+  background: url("arrow-down.png") no-repeat 0 5px transparent;
+  cursor: pointer;
+}
+
+#template .values .signature .name {
+  color: darkblue;
+}
+
+#template .types .signature .name {
+  color: darkgreen;
+}
+
+/* Comments text formating */
+
+.cmt {}
+
+.cmt p {
+	margin: 0.7em 0;
+}
+
+.cmt p:first-child {
+	margin-top: 0;
+}
+
+.cmt p:last-child {
+	margin-bottom: 0;
+}
+
+.cmt h3,
+.cmt h4,
+.cmt h5,
+.cmt h6 {
+  margin-bottom: 0.7em;
+  margin-top: 1.4em;
+  display: block;
+  text-align: left;
+  font-weight: bold;
+}
+
+.cmt h3 {
+  font-size: 14pt;
+}
+
+.cmt h4 {
+  font-size: 13pt;
+}
+
+.cmt h5 {
+  font-size: 12pt;
+}
+
+.cmt h6 {
+  font-size: 11pt;
+}
+
+.cmt pre {
+  padding: 5px;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  margin: 5px 0;
+  display: block;
+  font-family: monospace;
+}
+
+.cmt ul {
+  display: block;
+  list-style: circle;
+  padding-left: 20px;
+}
+
+.cmt ol {
+  display: block;
+  padding-left:20px;
+}
+
+.cmt ol.decimal {
+  list-style: decimal;
+}
+
+.cmt ol.lowerAlpha {
+  list-style: lower-alpha;
+}
+
+.cmt ol.upperAlpha {
+  list-style: upper-alpha;
+}
+
+.cmt ol.lowerRoman {
+  list-style: lower-roman;
+}
+
+.cmt ol.upperRoman {
+  list-style: upper-roman;
+}
+
+.cmt li {
+  display: list-item;
+}
+
+.cmt code {
+  font-family: monospace;
+}
+
+.cmt a {
+  font-style: bold;
+}
+
+.cmt em, .cmt i {
+  font-style: italic;
+}
+
+.cmt strong, .cmt b {
+  font-weight: bold;
+}
+
+/* Comments structured layout */
+
+p.comment {
+  display: block;
+  margin-left: 8.7em;
+  margin-top: 5px;
+}
+
+.shortcomment {
+  display: block;
+  margin: 5px 10px;
+}
+
+div.fullcomment {
+  margin: 5px 10px;
+}
+
+#template div.fullcomment {
+  display:none;
+  margin: 5px 0 0 8.7em;
+}
+
+#template .shortcomment {
+  margin: 5px 0 0 8.7em;
+  padding: 0;
+}
+
+div.fullcomment .block {
+  padding: 5px 0 0;
+  border-top: 1px solid #EBEBEB;
+  margin-top: 5px;
+}
+
+div.fullcomment div.block ol li p, 
+div.fullcomment div.block ol li {
+  display:inline
+}
+
+div.fullcomment .block > h5 {
+  font-style: italic;
+  font-weight: normal;
+  display: inline-block;
+}
+
+div.fullcomment .comment {
+  margin: 5px 0 10px;
+}
+
+div.fullcomment .comment:last-child {
+  margin-bottom: 0;
+}
+
+div.fullcomment dl.paramcmts > dt {
+  display: block;
+  float: left;
+  font-weight: bold;
+}
+
+div.fullcomment dl.paramcmts > dd {
+  display: block;
+  padding-left: 80px;
+  margin-bottom: 5px;
+}
+
+/* Members filter tool */
+
+#textfilter {
+	position: relative;
+	display: block;
+    height: 20px;
+	margin-bottom: 5px;
+}
+
+#textfilter > .pre {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: url("filter_box_left.png");
+}
+
+#textfilter > .input {
+	display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    left: 20px;
+}
+
+#textfilter > .input > input {
+	height: 16px;
+	padding: 2px;
+	font-weight: bold;
+	color: #993300;
+	background-color: white;
+    width: 100%;
+}
+
+#textfilter > .post {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    background: url("filter_box_right.png");
+}
+
+#mbrsel {
+  padding: 5px 10px;
+  background-color: #DADADA; /* light gray */
+  font-size: 9.5pt;
+  display: block;
+  margin-top: 1em;
+/*  margin-bottom: 1em; */
+}
+
+#mbrsel > div {
+  margin-bottom: 5px;
+}
+
+#mbrsel > div:last-child {
+  margin-bottom: 0;
+}
+
+#mbrsel > div > span.filtertype {
+  padding: 3px 0;
+  float: left;
+  display: inline-block;
+  color: #404040;
+  width: 4.5em;
+}
+
+#mbrsel > div > ol {
+  display: inline-block;
+  /*background-color: white;*/
+}
+
+#mbrsel > div > ol#linearization {
+  display: block;
+  margin-left: 4.5em;
+  margin-top: 5px;
+}
+
+#mbrsel > div > ol > li {
+  padding: 3px 10px;
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#mbrsel > div > ol > li.in {
+  background-color: white;
+  color: #4C4C4C;
+}
+
+#mbrsel > div > ol > li.out {
+  color: #4B4B4B;
+  background-color: #999; 
+}
+
+#mbrsel .hideall {
+  color: #4C4C4C;
+  font-weight: bold;
+}
+
+#mbrsel .showall {
+  color: #4C4C4C;
+  font-weight: bold;  
+}
